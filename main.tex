@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+\usepackage{lmodern}          % AER font
+\usepackage[T1]{fontenc}      % Better font encoding
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[round]{natbib}
+\usepackage{hyperref}
+
+%=======================================
+% Format helpers
+%=======================================
+% Target school -- used in the header and the conclusion so they stay in sync.
+\newcommand{\school}{[University]}
+
+% Run-in section heading: bold label ending in a period, body text follows
+% on the same line (matches the reference format).
+\newcommand{\shead}[1]{\par\vspace{0.85em}\noindent\textbf{#1.}\ }
+
+% Indented paragraphs, no extra vertical space between them.
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+%=======================================
+% Header
+%=======================================
+\noindent
+\begin{minipage}[t]{0.60\textwidth}
+  {\large\bfseries Statement of Purpose}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.38\textwidth}
+  \raggedleft
+  Rhea Choudhary\\[2pt]
+  \school
+\end{minipage}
+
+\vspace{1.4em}
+
+%=======================================
+% Body
+%=======================================
+\shead{Motivation} I am principally interested in labour, behavioural and financial economics. My research and professional experiences have strongly informed this view, and I am interested in applying micro-founded structural models to answer empirical questions of macroeconomic policy relevance. However, I am aware that my interests may change during my graduate studies and so I remain open to new options.
+
+\shead{Background} I earned my bachelor's degree from the University of Melbourne, majoring in Economics and Finance. In my four years at university I undertook graduate-level coursework notably in econometrics, microeconomics and macroeconomics. I consistently achieved top grades and graduated with first-class honours, receiving several awards in recognition of my academic achievement. My research thesis produced during my Honours year was also subsequently published as a central bank working paper. Alongside full-time work at the Reserve Bank of Australia -- Australia's equivalent of the Federal Reserve -- I completed coursework in multivariable calculus, linear algebra, real and complex analysis and statistics, again obtaining strong grades and receiving As in Linear Algebra and Real Analysis. I worked for the Reserve Bank of Australia for over three years where I gained significant research experience applying economic frameworks to answer questions of policy importance. Since May 2025, I have been working for Prof Manasi Deshpande at the University of Chicago as a predoctoral researcher leading a project examining the labour market effects of the National Disability Insurance scheme (NDIS).
+
+\shead{Policy evaluating `free TAFE' in Australia} An emerging area of the labour economics literature that I have taken an interest in include: the effect of `supply-side' education policies on stronger labour market matching, and how to observe the effects of `higher-order' human capital in wages, employment and other labour market outcomes. A recent policy initiative I believe could be exploited to explore these issues comes from Australia, where since 2019, many states have been offering a free vocational education to upskill or re-skill in areas with skill shortages (known as `free TAFE').\footnote{`TAFE' stands for Technical and Further Education. These areas predominantly relate to healthcare and social assistance sector jobs (21 per cent of courses eligible for free TAFE in 2019, and the fastest growing sector in Australia), and trade/construction (just under 50 per cent of eligible courses).  Eligibility to access free TAFE is relatively broad; individuals need to be an Australian or New Zealand citizen or permanent resident and reside in the state of the training institution they choose. Admission is limited by the number of funded places and cohort capacity of training institutions.} The state of Victoria was the first to implement free TAFE in 2019, with the goal to ``reduce a financial barrier to training, incentivise students to consider careers in priority occupations and respond to industry demand for skilled graduates" \citep{dtf2019}. Following its introduction, enrollments in these courses in Victoria materially increased and diverged from national trends \citep{pc2019}.
+
+Free TAFE is a unique policy initiative worth empirically investigating for several reasons. Firstly, it could be informative on the effectiveness of preferentially subsidised training policies as a way to induce labour force entry/switching and improve the quality of job market matching, particularly in growth sectors. Secondly, it is unclear whether re-skilling into areas of skill shortages was welfare-improving; while we might expect newly upskilled individuals to earn a skills premium,\footnote{The size of this skill premium is not immediately obvious because it is unclear how well free TAFE courses map to reported skill shortages \citep{vgo}.} the broad eligibility for free TAFE could have created an influx of newly skilled graduates that placed downward pressure on wages \citep{acemoglu2011skills}. Relatedly, this broad eligibility could also generate distortions if (i) `well-matched' workers choose to separate from their existing jobs to earn a higher income but end up with a lesser quality match, or more generally, (ii) there is an inefficient redistribution of workers from some sectors to others.\footnote{This is particularly relevant because from 2023 individuals can enrol in a free TAFE course even if they have a higher qualification level than the course they wanted to enrol into \citep{vicparlupskilling}.}
+
+I propose applying administrative data from the Australian Bureau of Statistics (ABS) to analyse whether free TAFE in Victoria causally changed the size of the skilled workforce in its target areas and the efficiency of job-matching following course completion. ABS data contains linked unit-level records of individuals' tax returns, enrollment and completions of vocational and university education, receipt of government benefits, healthcare system use, and demographic information such as gender, age and location. I have extensive experience using this data as part of my pre-doctoral research. I then intend to specify a structural model to model labour market entry under this policy change and investigate welfare implications for those who undertook these target courses pre- and post-free TAFE. As such, this work would be closely related to research such as \cite{card1988measuring} and \cite{alfonsi2020tackling}, that quantify the effects of subsidised training programs on employment and earnings. This work extends this literature to consider the effects of the same fully subsidised program on a whole host of different cohorts: young people looking for work, unemployed (or underemployed) workers, and those gainfully employed who may see reskilling as an opportunity to earn higher wages. It is also related to research on the effects of lower education costs on student effort (e.g.\ \citep{highedeffort}), by using observed earnings and employment outcomes as a proxy for worker quality post-training (and therefore student effort during training to influence their future work quality).
+
+\shead{Estimating disutility of work for Australian informal carers} Estimating individual disutility of work is a complicated task for many reasons, one of which being that in the absence of an exogenous change, it is difficult to identify whether individuals' observed labour force participation is determined by their own preferences for work (balancing income with disutility of work), or by binding constraints (e.g., inflexible work hours, means-tests for government benefits receipt). Informal carers could be a particularly interesting demographic to explore this research area because we might expect these cohorts to be lower income \citep{aihwinformal} and so exogenous changes to work constraints could observably change labour force participation. On the other hand, they face real trade-offs with providing informal care and generating income to support themselves and potentially those they care for. This care is valuable to the government because informal care substitutes for publicly funded formal care (e.g., via supports from the NDIS), so optimal policy would balance increased labour force participation of this cohort with increased public health costs.
+
+To estimate the size of Australian informal carers' disutility of work, I intend to exploit a recent policy change in work restrictions for carer payments -- income support given to informal carers -- and its effects on labour supply for this cohort. Specifically, in March 2025, carers receiving this income support can effectively work more hours in a week without jeopardising continued benefits receipt. Temporarily exceeding work limits now also no longer result in payments being cancelled, but instead are temporarily suspended \citep{carersnsw}. I plan again to use administrative data from the Australian Bureau of Statistics (ABS) to estimate whether changes to the carer payment had causal effects on labour market entry for informal carers, and use a structural model of labour market entry and exit under binding constraints to model these decisions.
+
+\shead{Conclusion} I am excited to pursue an academic career conducting independent research, collaborating with other researchers, and teaching undergraduate and graduate students. Completing a PhD at \school will provide a strong foundation for succeeding in this pursuit and for making a significant contribution to the field of economics.
+
+\clearpage
+\bibliographystyle{abbrvnat}
+\bibliography{bib}
+
+%=======================================
+
+\end{document}
