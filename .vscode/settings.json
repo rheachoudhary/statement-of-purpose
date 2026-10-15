@@ -9,20 +9,11 @@
         "-file-line-error",
         "%DOC%"
       ]
-    },
-    {
-      "name": "bibtex",
-      "command": "C:/Users/rheac/AppData/Local/Programs/MiKTeX/miktex/bin/x64/bibtex.exe",
-      "args": ["%DOCFILE%"]
     }
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "pdflatex -> bibtex -> pdflatex x2",
-      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
-    },
-    {
-      "name": "pdflatex only",
+      "name": "pdflatex",
       "tools": ["pdflatex"]
     }
   ],
