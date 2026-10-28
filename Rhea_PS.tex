@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+\usepackage{lmodern}          % AER font
+\usepackage[T1]{fontenc}      % Better font encoding
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{hyperref}
+
+%=======================================
+% Format helpers
+%=======================================
+% Target school -- used in the header and the body so they stay in sync.
+\newcommand{\school}{[University name]}
+\newcommand{\program}{[Program name]}
+
+% Run-in section heading: bold label ending in a period, body text follows
+% on the same line (matches the reference format).
+\newcommand{\shead}[1]{\par\vspace{0.85em}\noindent\textbf{#1.}\ }
+
+% Indented paragraphs, no extra vertical space between them.
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+
+\begin{document}
+
+%=======================================
+% Header
+%=======================================
+\noindent
+\begin{minipage}[t]{0.60\textwidth}
+  {\large\bfseries Personal Statement}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.38\textwidth}
+  \raggedleft
+  Rhea Choudhary\\[2pt]
+  \school
+\end{minipage}
+
+\vspace{0.5em}
+\noindent\rule{\textwidth}{0.8pt}
+
+\vspace{1.1em}
+
+%=======================================
+% Body
+%=======================================
+\shead{Section heading} Body text goes here.
+
+\shead{Section heading} Body text goes here.
+
+\shead{Section heading} Body text goes here.
+%=======================================
+
+\end{document}
