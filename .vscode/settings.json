@@ -14,12 +14,25 @@
       "name": "bibtex",
       "command": "C:/Users/rheac/AppData/Local/Programs/MiKTeX/miktex/bin/x64/bibtex.exe",
       "args": ["%DOCFILE%"]
+    },
+    {
+      "name": "texcount",
+      "command": "C:/Users/rheac/AppData/Local/Programs/MiKTeX/miktex/bin/x64/texcount.exe",
+      "args": ["-1", "-sum", "-merge", "-out=%DOCFILE%.wc", "%DOCFILE_EXT%"]
     }
   ],
   "latex-workshop.latex.recipes": [
     {
       "name": "pdflatex -> bibtex -> pdflatex x2",
       "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "texcount -> pdflatex -> bibtex -> pdflatex x2",
+      "tools": ["texcount", "pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "texcount -> pdflatex",
+      "tools": ["texcount", "pdflatex"]
     },
     {
       "name": "pdflatex only",
