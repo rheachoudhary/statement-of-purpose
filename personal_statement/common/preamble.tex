@@ -1,0 +1,74 @@
+%TC:ignore
+%=======================================
+% Shared preamble for every personal statement.
+% Each program file sets \school, \pstitle and (optionally) \wordmin and
+% \wordlimit BEFORE \input-ing this file; anything left unset falls back to
+% the defaults below.
+%=======================================
+\usepackage{lmodern}          % AER font
+\usepackage[T1]{fontenc}      % Better font encoding
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage[round]{natbib}
+\usepackage{bibentry}         % lets \nobibliography resolve cites without printing a list
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+%=======================================
+% Format helpers
+%=======================================
+\providecommand{\school}{[University name]}
+\providecommand{\program}{Economics}
+\providecommand{\pstitle}{Personal Statement}
+
+% Run-in section heading: bold label ending in a period, body text follows
+% on the same line (matches the reference format).
+\newcommand{\shead}[1]{\par\vspace{0.85em}\noindent\textbf{#1.}\ }
+
+% Break between master pieces: a blank line, next line not indented.
+\newcommand{\psbreak}{\par\vspace{\baselineskip}\noindent}
+
+% Red bracketed note for text still to be written. Each program file tells
+% texcount to skip it (see the %TC:macro line in each program file).
+\newcommand{\placeholder}[1]{\textcolor{red}{[#1]}}
+
+% Indented paragraphs, no extra vertical space between them.
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+%=======================================
+% Footer: page number centred, word count on the right.
+% The count is read from <jobname>.wc, which the texcount build recipe
+% regenerates on each build. Text between %TC:ignore and %TC:endignore is
+% excluded from the count. The count turns red when outside the limits.
+%=======================================
+\newread\wcfile
+\newif\ifwcknown
+\IfFileExists{\jobname.wc}{%
+  \openin\wcfile=\jobname.wc
+  \read\wcfile to\wcnum
+  \closein\wcfile
+  \wcknowntrue}{\def\wcnum{??}}
+
+\newif\ifwcbad
+\newcommand{\wordcountdisplay}{%
+  \wcbadfalse
+  \ifwcknown
+    \ifdefined\wordlimit\ifnum\wcnum>\wordlimit\relax\wcbadtrue\fi\fi
+    \ifdefined\wordmin\ifnum\wcnum<\wordmin\relax\wcbadtrue\fi\fi
+  \fi
+  \ifwcbad\color{red}\fi
+  Word count: \wcnum%
+  \ifdefined\wordlimit
+    \ (limit: \ifdefined\wordmin\wordmin--\fi\wordlimit)%
+  \fi}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\small\wordcountdisplay}
+%TC:endignore

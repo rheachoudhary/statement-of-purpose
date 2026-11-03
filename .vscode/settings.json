@@ -17,18 +17,18 @@
     },
     {
       "name": "texcount",
-      "command": "C:/Users/rheac/AppData/Local/Programs/MiKTeX/miktex/bin/x64/texcount.exe",
-      "args": ["-1", "-sum", "-merge", "-out=%DOCFILE%.wc", "%DOCFILE_EXT%"]
+      "command": "C:/Program Files/Git/usr/bin/perl.exe",
+      "args": ["C:/Users/rheac/AppData/Roaming/MiKTeX/2.9/scripts/texcount/texcount.pl", "-1", "-sum", "-merge", "-inc", "-out=%DOCFILE%.wc", "%DOCFILE_EXT%"]
     }
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "pdflatex -> bibtex -> pdflatex x2",
-      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
-    },
-    {
       "name": "texcount -> pdflatex -> bibtex -> pdflatex x2",
       "tools": ["texcount", "pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex x2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
     },
     {
       "name": "texcount -> pdflatex",

@@ -1,0 +1,34 @@
+\documentclass[11pt]{article}
+%=======================================
+% MASTER -- every shared piece in one document, so you can read the full
+% statement while drafting. The program folders pick from these same files.
+%=======================================
+\newcommand{\school}{[University name]}
+\newcommand{\pstitle}{Personal Statement -- Master}
+%TC:macro \placeholder [ignore]   % keep red notes out of the word count
+\input{../common/preamble}
+
+\begin{document}
+\input{../common/header}
+
+%=======================================
+% Theme 1: how my personal background motivated a graduate degree
+%=======================================
+\input{01_background}
+\psbreak
+\input{02_safety_nets}
+\psbreak
+\input{03_motivation}
+% \psbreak
+% \input{04_research_link}   % optional; was commented out of the draft
+
+%=======================================
+% Theme 2: contributing to the university community
+%=======================================
+\psbreak
+\input{05_contribute}
+\psbreak
+\input{07_leadership}
+
+\input{../common/footer}
+\end{document}

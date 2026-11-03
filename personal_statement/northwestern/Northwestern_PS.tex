@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+%=======================================
+% NORTHWESTERN -- Personal Statement (125--250 words)
+% Prompt: "Write a statement that includes any relevant information on one or
+% more of the following topics (the length of this statement should range
+% from 125 to 250 words maximum):
+% - Pivotal experiences, opportunities, and/or challenges that have influenced
+%   your educational and professional development.
+% - Leadership experiences, community outreach, service initiatives, or
+%   research projects you have participated in or plan to pursue that aim to
+%   positively impact others or the broader community.
+% - Anything you would like to share with the admissions committee that you
+%   have yet to discuss in other areas of the application can be addressed
+%   here. This may include any gaps in your academic and professional
+%   experience, or additional context if you believe your academic record
+%   does not demonstrate your true capabilities. If needed, you may also use
+%   this space to expand upon the topics discussed in the above essays."
+%
+% Any one topic is enough, so this uses the generic background pieces only
+% (no leadership section).
+% The shared pieces are well over 250 words, so this will need cut-down
+% versions (e.g. master/01_background_short.tex).
+%=======================================
+\newcommand{\school}{Northwestern University}
+\newcommand{\wordmin}{125}
+\newcommand{\wordlimit}{250}
+%TC:macro \placeholder [ignore]   % keep red notes out of the word count
+\input{../common/preamble}
+
+\begin{document}
+\input{../common/header}
+
+\input{../master/01_background_short}
+% Full-length pieces (over the limit):
+% \input{../master/01_background}
+% \psbreak
+% \input{../master/02_safety_nets}
+
+\input{../common/footer}
+\end{document}
