@@ -13,3 +13,6 @@
 
 # Compiled PDF (uncomment to keep the PDF out of version control)
 # *.pdf
+
+# School PDFs are copied up out of tex/ by build_all.sh; ignore the in-place copies
+schools/*/tex/*.pdf
