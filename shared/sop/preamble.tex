@@ -1,7 +1,8 @@
 % Shared SOP preamble, used by Rhea_SOP.tex and every schools/<school>/ file.
 % Each school file defines \school and \program before \input-ing this;
 % \schoolheader (header line) defaults to \school.
-\documentclass[11pt]{article}
+\providecommand{\sopfontsize}{11pt}   % a school file can set 12pt
+\documentclass[\sopfontsize]{article}
 \usepackage{lmodern}          % AER font
 \usepackage[T1]{fontenc}      % Better font encoding
 \usepackage{amsmath, amssymb}
@@ -10,6 +11,7 @@
 \usepackage{url}
 \usepackage[round, longnamesfirst]{natbib}
 \usepackage{hyperref}
+\usepackage{mfirstuc}         % \xmakefirstuc, used by the optional Fit section
 
 %=======================================
 % Format helpers
@@ -21,7 +23,7 @@
 
 % Run-in section heading: bold label ending in a period, body text follows
 % on the same line (matches the reference format).
-\newcommand{\shead}[1]{\par\vspace{0.85em}\noindent\textbf{#1.}\ }
+\newcommand{\shead}[1]{\par\vspace{0.5em}\noindent\textbf{#1.}\ }
 
 % Indented paragraphs, no extra vertical space between them.
 \setlength{\parindent}{1.5em}
@@ -36,7 +38,7 @@
 \fancyfoot[C]{\thepage}\fancyfoot[R]{\small Word count: \wcnum}
 
 % Compact reference list: small font, tight spacing, heading styled like \shead.
-\renewcommand{\bibsection}{\par\vspace{0.85em}\noindent\textbf{References}\par\vspace{0.3em}}
-\renewcommand{\bibfont}{\small}
-\setlength{\bibsep}{1pt}
+\renewcommand{\bibsection}{\par\vspace{0.5em}\noindent\textbf{References}\par}
+\renewcommand{\bibfont}{\footnotesize}
+\setlength{\bibsep}{0pt}
 \bibliographystyle{abbrvnat}

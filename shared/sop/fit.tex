@@ -1,0 +1,10 @@
+%=======================================
+% Optional "Fit" section. To use it, add these lines to a school's SOP file,
+% right after the body is \input (\fitfaculty and \fitcenters are each
+% optional; without them the matching "such as ..." clause is dropped):
+%   \newcommand{\fitfaculty}{Jane Doe and John Smith}
+%   \newcommand{\fitcenters}{the Becker Friedman Institute for Economics}
+%   \input{../../../shared/sop/fit}
+% \xmakefirstuc capitalises "the University of ..." at the start of a sentence.
+%=======================================
+\shead{Fit} \xmakefirstuc{\school} is the ideal setting for me to pursue my research interests. I am excited to work with \ifdefined\fitfaculty strong faculty such as \fitfaculty, whose work is\else the strong faculty whose work is\fi{} highly complementary to my own, and to engage with the wealth of resources and research initiatives \ifdefined\fitcenters such as \fitcenters, which serve\else that serve\fi{} as excellent platforms for my research agenda.

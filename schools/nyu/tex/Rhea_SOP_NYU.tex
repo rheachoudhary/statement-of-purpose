@@ -1,17 +1,30 @@
 %=======================================
-% NYU -- Statement of Purpose
-% Body: ../../../Rhea_SOP_body.tex; preamble/header: ../../../shared/sop/.
+% NYU ECONOMICS -- Statement of Purpose
+% Requirement: no more than 2 double-spaced pages.
+% Uses the 500-word body (../../../shared/sop/Rhea_SOP_body_500.tex), 12pt, double
+% spaced, in-text citations only (no reference list, to stay within 2 pages).
+% Preamble/header: ../../../shared/sop/.
 %=======================================
+\newcommand{\sopfontsize}{12pt}
 \newcommand{\school}{NYU}
 \newcommand{\program}{Economics}
 \newcommand{\schoolheader}{New York University}
 \input{../../../shared/sop/preamble}
+\usepackage{bibentry}         % lets \nobibliography resolve cites without printing a list
+\usepackage{setspace}
+\doublespacing
 
 \begin{document}
+\begin{singlespace}   % header block single-spaced; body stays double-spaced
 \input{../../../shared/sop/header}
+\end{singlespace}
 
-\input{../../../Rhea_SOP_body}
+\input{../../../shared/sop/Rhea_SOP_body_500}
 
-\bibliography{../../../bib}
+% Fit section (ON for this school; comment out both lines to turn off):
+\newcommand{\fitcenters}{the C. V. Starr Center for Applied Economics}
+\input{../../../shared/sop/fit}
+
+\nobibliography{../../../shared/bib}
 
 \end{document}

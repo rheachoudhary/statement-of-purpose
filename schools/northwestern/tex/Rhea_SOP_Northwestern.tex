@@ -1,6 +1,7 @@
 %=======================================
-% NORTHWESTERN -- Statement of Purpose
-% Body: ../../../Rhea_SOP_body.tex; preamble/header: ../../../shared/sop/.
+% NORTHWESTERN -- Statement of Purpose (<1000 words)
+% Body: ../../../shared/sop/Rhea_SOP_body_800.tex (shared with Harris);
+% edits to the full body do NOT flow through. Preamble/header: ../../../shared/sop/.
 %=======================================
 \newcommand{\school}{Northwestern University}
 \newcommand{\program}{Economics}
@@ -9,8 +10,13 @@
 \begin{document}
 \input{../../../shared/sop/header}
 
-\input{../../../Rhea_SOP_body}
+\input{../../../shared/sop/Rhea_SOP_body_800}
 
-\bibliography{../../../bib}
+% Fit section (ON for this school; comment out these lines to turn off):
+\newcommand{\fitfaculty}{Molly Schnell and Abi Adams}
+\newcommand{\fitcenters}{the Institute for Policy Research}
+\input{../../../shared/sop/fit}
+
+\bibliography{../../../shared/bib}
 
 \end{document}

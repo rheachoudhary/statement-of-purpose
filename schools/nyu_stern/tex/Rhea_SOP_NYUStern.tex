@@ -3,7 +3,7 @@
 % NYU STERN -- Statement of Purpose (full version)
 % Requirements: typed, double-spaced, 12-point font; max 2-3 pages; top of
 % each page labelled with Name, Date of Birth (month, day, year), and Page
-% Number. Body is shared via ../../../Rhea_SOP_body.tex.
+% Number. Body: ../../../shared/sop/Rhea_SOP_body_500.tex (500-word version, to fit 2-3 pages).
 %=======================================
 \usepackage{lmodern}          % AER font
 \usepackage[T1]{fontenc}      % Better font encoding
@@ -15,13 +15,14 @@
 \usepackage{bibentry}         % lets \nobibliography resolve cites without printing a list
 \usepackage{setspace}
 \usepackage{hyperref}
+\usepackage{mfirstuc}         % \xmakefirstuc, used by the optional Fit section
 
 %=======================================
 % Format helpers
 %=======================================
 \newcommand{\school}{NYU Stern}
 \newcommand{\program}{Economics}
-\newcommand{\dob}{[May 11, 1999]}   % date of birth, e.g. January 1, 2000
+\newcommand{\dob}{May 11, 1999}   % date of birth, e.g. January 1, 2000
 
 % Run-in section heading: bold label ending in a period, body text follows
 % on the same line (matches the reference format).
@@ -56,10 +57,14 @@
 %=======================================
 % Body
 %=======================================
-\input{../../../Rhea_SOP_body}
+\input{../../../shared/sop/Rhea_SOP_body_500}
+
+% Fit section (ON; no centre named -- add a fitcenters line to name one):
+\newcommand{\fitfaculty}{Jacob French and Abdoulaye Ndiaye}
+\input{../../../shared/sop/fit}
 
 % Citations resolve against bib.bib, but no reference list is printed.
 \bibliographystyle{abbrvnat}
-\nobibliography{../../../bib}
+\nobibliography{../../../shared/bib}
 
 \end{document}
