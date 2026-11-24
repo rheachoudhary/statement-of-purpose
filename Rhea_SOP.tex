@@ -5,8 +5,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{url}
-\usepackage[round]{natbib}
-\usepackage{bibentry}         % lets \nobibliography resolve cites without printing a list
+\usepackage[round, longnamesfirst]{natbib}
+%\usepackage{bibentry}         % lets \nobibliography resolve cites without printing a list
 \usepackage{hyperref}
 
 %=======================================
@@ -24,12 +24,20 @@
 \setlength{\parindent}{1.5em}
 \setlength{\parskip}{0pt}
 
+% Word count footer. The VS Code build runs texcount first, writing the count
+% to \jobname.wc; it shows "??" until texcount has run once.
+\usepackage{fancyhdr}
+\newread\wcfile
+\IfFileExists{\jobname.wc}{\openin\wcfile=\jobname.wc \read\wcfile to\wcnum \closein\wcfile}{\def\wcnum{??}}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}\fancyfoot[R]{\small Word count: \wcnum}
 
 \begin{document}
 
 %=======================================
-% Header
+% Header (not counted in the word count)
 %=======================================
+%TC:ignore
 \noindent
 \begin{minipage}[t]{0.60\textwidth}
   {\large\bfseries Statement of Purpose}
@@ -42,33 +50,22 @@
 
 \vspace{0.5em}
 \noindent\rule{\textwidth}{0.8pt}
+%TC:endignore
 
 \vspace{1.1em}
 
 %=======================================
 % Body
 %=======================================
-\shead{Research interests} I am applying to pursue a PhD in \program at \school, where I intend to study questions at the intersection of public, labour and health economics. The specific research agenda I intend to pursue in graduate school surrounds how government interventions can be better designed and program information shared such that they target their desired populations and meet policy objectives. For example, I hope to pursue questions such as: which `tags' in program eligibility fare best in [xxxx]
+\input{Rhea_SOP_body}
 
-\shead{Academic background} My academic background demonstrates that I possess the necessary skills to succeed in
-graduate study. I completed a Bachelor of Commerce (Honours) majoring in Economics and Finance at the University of Melbourne,
-achieving First Class Honours and receiving numerous awards for my academic performance. My Honours thesis, which evaluated the effects of unconventional monetary policy on financial stability in an emerging market context, was also published as a central bank working paper. I have also achieved excellent grades in proof-based and other mathematics subjects, including Real and Complex Analysis (MATH2023) and Linear Algebra (MATH1002).
-
-\shead{Pre-doctoral and professional experience} I have been broadening my research toolkit working for Professor Manasi Deshpande as a pre-doctoral researcher. Our project examines the labour supply effects of the NDIS, a first-of-its-kind disability support program. Under the NDIS, the federal government provides individuals with disabilities a budget based on their needs, which they can spend in the private market on services like personal care, household tasks and physical/behavioural therapy. We exploit the staggered rollout of the NDIS across Australia to estimate the causal effects on wages and labour supply. We find that the marginal entrants induced by the NDIS into disability work are low-income, lower-skilled women who obtain modest earnings increases from entry. Through this research I have gained significant experience working with large administrative datasets and independently applying an array of causal inference methods such as staggered rollout event studies, difference-in-differences and shift-share instruments, as well as using LASSO to define a base population of interest. I have also gained valuable skills in how to carefully implement these econometric methods in ways that ensure credible identification, all of which I believe have strongly prepared me to conduct independent research at the frontier of the discipline.
-\\~\\
-Prior to my pre-doctoral position, I worked at the Reserve Bank of Australia, Australia's equivalent of the Federal Reserve. In this role, I led an array of analytical research, most recently running a contingent valuation experiment in a large-scale population-representative survey, which is in the process of becoming a central bank working paper. 
-\shead{Current research} While auditing Professor Deshpande's course `Empirical Analysis of Social Insurance', I became interested in how social transfers target cohorts when need is unobservable \citep{akerlof1978,nichols1982}, and the challenge of balancing efficient targeting against the barriers to take-up it can create among intended cohorts \citep{deshpande_li2019}. I was also curious about how I could apply findings from this literature in social insurance to government programs more broadly. One such case study is an Australian education policy called `Free TAFE', where from 2019 the state of Victoria offered free vocational education in certain courses in occupations deemed to have labour shortages.\footnote{Examples include disability care, nursing, construction, and early childhood care. From 2023 onwards, this program was phased in by other states.} This policy is unique in that eligibility is determined at the course level rather than the recipient level (e.g., by means-testing or employment history). 
-\\~\\
-At first glance, it is unclear which approach is more effective. On the one hand, course-level targeting could achieve two goals simultaneously: like other supply-side policies, it reduces education costs that can deter low-income, low-education individuals with high marginal returns from enrolment, and attempts to maximise the likelihood this education translates to employment by prioritising courses with labour shortages. It is also plausibly easier to implement, given that labour shortages are more observable than recipients' underlying need. However, without individual-based targeting, such programs rely on efficient self-sorting, which makes crowd-out possible. Low-skilled, low-education individuals, for whom the marginal return to this education is higher, could be crowded out of program spots by individuals with low opportunity costs of enrolment but observably lower need or returns to undertaking this training.
-\\~\\
-Therefore, in this research, I ask two questions: firstly, is preferentially subsidised training a legitimate lever for upskilling individuals into growing sectors when implemented at scale? And secondly, does course-based targeting produce outcomes similar to those documented in the literature on participant targeting? I leverage variation across states and compare outcomes in Victoria, where free TAFE was introduced, with those in other states in the years before they introduced similar policies. I have been using linked individual-level administrative data from the Australian Bureau of Statistics, which allow me to observe individuals' prior education history, socio-economic background, parental income, health, and employment outcomes over time.\\~\\
-For my first question, I have to find a plausible `risk set' of individuals who, based on ex-ante characteristics, are likely to enrol in these courses. In my work thus far, I find that young women previously on unemployment or family-based income support have the strongest enrolment first stage. 
-\\~\\
-To answer my second question on targeting, I compare whether the program changed the composition of enrolments in these courses across age, gender, labour force status at enrolment, and highest education level. So far I have found that free TAFE induced higher enrolments among women and working-age cohorts, particularly in longer-term courses such as Certificate IV courses and diplomas relative to entry-level courses that are likely lower cost. Inspired by the targeting efficiency work in \citet{deshpande_li2019}, I intend to explore how well this course-based targeting measure fared in inducing likely `target cohorts' to enter the program (e.g., low-skilled, low-income cohorts) and in dissuading individuals with low marginal returns to this education from enrolling, and how much of the enrolment effect comes from inframarginal enrolees.
 %=======================================
 
-% Citations resolve against bib.bib, but no reference list is printed.
+% Compact reference list: small font, tight spacing, heading styled like \shead.
+\renewcommand{\bibsection}{\par\vspace{0.85em}\noindent\textbf{References}\par\vspace{0.3em}}
+\renewcommand{\bibfont}{\small}
+\setlength{\bibsep}{1pt}
 \bibliographystyle{abbrvnat}
-\nobibliography{bib}
+\bibliography{bib}
 
 \end{document}

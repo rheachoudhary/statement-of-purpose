@@ -28,8 +28,13 @@
 % on the same line (matches the reference format).
 \newcommand{\shead}[1]{\par\vspace{0.85em}\noindent\textbf{#1.}\ }
 
+% Suppress the indent of whichever paragraph starts next. Unlike \noindent
+% this survives blank lines/comments in between, and does nothing if no
+% paragraph follows (so a trailing \psbreak can't create an empty page).
+\newcommand{\psnoindent}{\everypar{{\setbox0\lastbox}\everypar{}}}
+
 % Break between master pieces: a blank line, next line not indented.
-\newcommand{\psbreak}{\par\vspace{\baselineskip}\noindent}
+\newcommand{\psbreak}{\par\vspace{\baselineskip}\psnoindent}
 
 % Red bracketed note for text still to be written. Each program file tells
 % texcount to skip it (see the %TC:macro line in each program file).
