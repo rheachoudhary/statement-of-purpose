@@ -20,6 +20,7 @@ build() {  # build <dir> <file.tex>  -- prints one status line
 
 build shared/sop_master Rhea_SOP.tex
 build shared/sop_master Rhea_SOP_500.tex
+build shared/sop_master Rhea_SOP_200.tex
 build shared/ps_master Master_PS.tex
 for f in schools/*/tex/*.tex; do
   build "$(dirname "$f")" "$(basename "$f")"
